@@ -4,12 +4,10 @@ import './MovieCard.css';
 const MovieCard = (props) => {
   return (
     <div className='movie-card'>
-      <img src={props.poster} />
-      <h2>{props.title}</h2>
+      <h3 className='titles'>{props.title}</h3>
+      <img className='posters' src={props.poster} />
     </div>
   )
 }
-
-
 
 export default MovieCard;

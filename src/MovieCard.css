@@ -1,0 +1,22 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.movie-card {
+  box-sizing: border-box;
+  /* height: 500px; */
+  /* width: 200px; */
+  border: solid 3px black;
+}
+
+.posters {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  /* margin-top: -10px; */
+}
