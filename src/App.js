@@ -10,7 +10,9 @@ class App extends Component {
 
   render() {
     return (
-      <h1>Rancid Tomatillos</h1>
+      <main className='App'>
+        <h1>Rancid Tomatillos</h1>
+      </main>
     )
   }
 }
