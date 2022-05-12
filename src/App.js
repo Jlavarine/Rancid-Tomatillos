@@ -8,21 +8,26 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: []
-
+      movies: [],
+      clickedMovie: []
     }
   }
   componentDidMount = () => {
     this.setState({movies: movieData.movies})
-    console.log(movieData.movies)
   }
 
+  getClickedMovie = (id) => {
+    const numberId = parseInt(id)
+    const selectedMovie = movieData.movies.filter(movie => movie.id === numberId)
+    this.setState({movies: [...this.state.movies], clickedMovie: [selectedMovie]})
+}
 
   render() {
     return (
       <main className='App'>
         <h1>Rancid Tomatillos</h1>
-        <MovieContainer movies={this.state.movies}/>
+        // {this.state.clickedMovie.length && <MovieContainer movies={this.state.clickedMovie}/>}
+        <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
       </main>
     )
   }

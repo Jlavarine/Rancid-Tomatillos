@@ -11,6 +11,7 @@ const MovieContainer = (props) => {
         key={movie.id}
         poster={movie.poster_path}
         title={movie.title}
+        getClickedMovie={props.getClickedMovie}
       />
     )
   })
