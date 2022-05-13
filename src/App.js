@@ -10,7 +10,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      clickedMovie: []
+      clickedMovie: ''
     }
   }
   componentDidMount = () => {
@@ -19,15 +19,15 @@ class App extends Component {
 
   getClickedMovie = (id) => {
     const numberId = parseInt(id)
-    const selectedMovie = movieData.movies.filter(movie => movie.id === numberId)
-    this.setState({movies: [...this.state.movies], clickedMovie: [selectedMovie]})
+    const selectedMovie = this.state.movies.find(movie => movie.id === numberId)
+    this.setState({movies: [...this.state.movies], clickedMovie: selectedMovie})
 }
 
   render() {
     return (
       <main className='App'>
         <h1>Rancid Tomatillos</h1>
-        {this.state.clickedMovie.length
+        {this.state.clickedMovie
         ? <MovieDescription movies={this.state.clickedMovie} />
         : <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
         }
