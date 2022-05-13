@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <main className='App'>
         <h1>Rancid Tomatillos</h1>
-        // {this.state.clickedMovie.length && <MovieContainer movies={this.state.clickedMovie}/>}
+        // {this.state.clickedMovie.length > 0 && <MovieContainer movies={this.state.clickedMovie}/>}
         <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
       </main>
     )
