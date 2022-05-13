@@ -4,21 +4,20 @@ import './MovieDescription.css'
 
 const MovieDescription = (props) => {
   return (
-    <div className='movie-description'>
-      <img src={props.movies.backdrop_path}/>
-      <div>
-        <img src={props.movies.poster_path}/>
+      <div style={{backgroundImage: `url(${props.movies.backdrop_path})`}} className='movie-description' src={props.movies.backdrop_path}>
+        <div className='poster-box'>
+          <img className='poster-path' src={props.movies.poster_path}/>
+        </div>
+        <div className='movie-details-box'>
+          <p>Title: {props.movies.title}</p>
+          <p>Release Date: {props.movies.release_date}</p>
+          <p>Average Rating: {props.movies.average_rating.toFixed(1)}</p>
+          <button>Return</button>
+        </div>
       </div>
-      <div>
-        <p>{props.movies.title}</p>
-        <p>{props.movies.release_date}</p>
-        <p>{props.movies.average_rating}</p>
-      </div>
-    </div>
   )
 }
 export default MovieDescription
-
 
 
 
