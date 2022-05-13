@@ -3,6 +3,7 @@ import movieData from './data';
 // import logo from './logo.svg';
 import './App.css';
 import MovieContainer from './MovieContainer';
+import MovieDescription from './MovieDescription';
 
 class App extends Component {
   constructor() {
@@ -26,13 +27,16 @@ class App extends Component {
     return (
       <main className='App'>
         <h1>Rancid Tomatillos</h1>
-        // {this.state.clickedMovie.length > 0 && <MovieContainer movies={this.state.clickedMovie}/>}
-        <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
+        {this.state.clickedMovie.length
+        ? <MovieDescription movies={this.state.clickedMovie} />
+        : <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
+        }
       </main>
     )
   }
 }
 
+// <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
 
 
 
