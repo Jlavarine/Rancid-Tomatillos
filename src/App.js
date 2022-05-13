@@ -10,7 +10,8 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      clickedMovie: ''
+      clickedMovie: '',
+      clickedHome: ''
     }
   }
   componentDidMount = () => {
@@ -23,16 +24,26 @@ class App extends Component {
     this.setState({movies: [...this.state.movies], clickedMovie: selectedMovie})
 }
 
+  returnToMainView = () => {
+    this.setState({movies: [...this.state.movies], clickedMovie: '', clickedHome: ''})
+  }
+
   render() {
-    return (
-      <main className='App'>
-        <h1>Rancid Tomatillos</h1>
-        {this.state.clickedMovie
-        ? <MovieDescription movies={this.state.clickedMovie} />
-        : <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
-        }
-      </main>
-    )
+    if(this.state.clickedMovie || this.state.clickedHome) {
+      return (
+        <main className='App'>
+          <h1>Rancid Tomatillos</h1>
+          <MovieDescription movies={this.state.clickedMovie} returnToMainView={this.returnToMainView}/>
+        </main>
+      )
+    } else {
+      return (
+        <main className='App'>
+          <h1>Rancid Tomatillos</h1>
+          <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
+        </main>
+      )
+    }
   }
 }
 

@@ -12,7 +12,7 @@ const MovieDescription = (props) => {
           <p>Title: {props.movies.title}</p>
           <p>Release Date: {props.movies.release_date}</p>
           <p>Average Rating: {props.movies.average_rating.toFixed(1)}</p>
-          <button>Return</button>
+          <button onClick={() => props.returnToMainView()}>Return</button>
         </div>
       </div>
   )
