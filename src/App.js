@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import movieData from './data';
+// import movieData from './data';
 // import logo from './logo.svg';
 import './App.css';
 import MovieContainer from './MovieContainer';
@@ -11,11 +11,15 @@ class App extends Component {
     this.state = {
       movies: [],
       clickedMovie: '',
-      clickedHome: ''
+      clickedHome: '',
+      error: ''
     }
   }
   componentDidMount = () => {
-    this.setState({movies: movieData.movies})
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(response => response.json())
+    .then(data => this.setState({movies: data.movies}))
+    .catch(error => this.setState({error: 'Something went wrong, please refresh!'}))
   }
 
   getClickedMovie = (id) => {
@@ -35,6 +39,10 @@ class App extends Component {
           <h1>Rancid Tomatillos</h1>
           <MovieDescription movies={this.state.clickedMovie} returnToMainView={this.returnToMainView}/>
         </main>
+      )
+    } else if (this.state.error) {
+      return (
+        <h1 className='App'>{this.state.error}</h1>
       )
     } else {
       return (
