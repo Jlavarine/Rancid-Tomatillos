@@ -39,10 +39,15 @@ class MovieDescription extends Component {
           </div>
           <div className='movie-details-box'>
             <p>Title: {this.state.movie.title}</p>
+            <br/>
             <p>Overview: {this.state.movie.overview}</p>
+            <br/>
             <p>Runtime: {this.state.movie.runtime} mins</p>
+            <br/>
             <p>Average Rating: {this.state.movie.average_rating}</p>
+            <br/>
             <p>Release Date: {this.state.movie.release_date}</p>
+            <br/>
             <button onClick={() => this.props.returnToMainView()}>Return</button>
           </div>
         </div>
