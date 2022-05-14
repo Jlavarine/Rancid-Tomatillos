@@ -8,15 +8,21 @@
   box-sizing: border-box;
   /* height: 500px; */
   /* width: 200px; */
-  border: solid 3px black;
 }
 
 .posters {
   object-fit: contain;
   height: 100%;
   width: 100%;
+  border-radius: 90px;
 }
 
-.title {
-  /* margin-top: -10px; */
+.posters:hover {
+  transform: scale(1.05);
+  transition: 800ms;
+  cursor: pointer;
+}
+
+.titles {
+  color: white;
 }
