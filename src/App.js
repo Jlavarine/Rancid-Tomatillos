@@ -15,25 +15,40 @@ class App extends Component {
       error: ''
     }
   }
+
   componentDidMount = () => {
+    // fetch('https://httpstat.us/500')
+    //rancid-tomatillos.herokuapp.com/api/v2/movies
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(response => response.json())
+    // .then(response => response.json())
+    .then(response => {
+      // if (response.status === '500') {
+      if (!response.ok) {
+        this.setState({error: 'Server is down, try again later!'})
+      } else {
+        // console.log(response)
+        return response.json()
+      }
+    })
     .then(data => this.setState({movies: data.movies}))
-    .catch(error => this.setState({error: 'Something went wrong, please refresh!'}))
+    .catch(error => {
+      console.log('Something went wrong, please refresh!')
+      this.setState({error: 'Something went wrong, please refresh!'})
+    })
   }
 
   getClickedMovie = (id) => {
     const numberId = parseInt(id)
     const selectedMovie = this.state.movies.find(movie => movie.id === numberId)
     this.setState({movies: [...this.state.movies], clickedMovie: selectedMovie})
-}
+  }
 
   returnToMainView = () => {
     this.setState({movies: [...this.state.movies], clickedMovie: '', clickedHome: ''})
   }
 
   render() {
-    if(this.state.clickedMovie || this.state.clickedHome) {
+    if (this.state.clickedMovie || this.state.clickedHome) {
       return (
         <main className='App'>
           <h1>Rancid Tomatillos</h1>
