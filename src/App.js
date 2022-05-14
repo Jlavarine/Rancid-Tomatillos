@@ -24,7 +24,7 @@ class App extends Component {
     .then(response => {
       // if (response.status === '500') {
       if (!response.ok) {
-        this.setState({error: 'Server is down, try again later!'})
+        this.setState({error: 'Something went wrong, please refresh!'})
       } else {
         // console.log(response)
         return response.json()
