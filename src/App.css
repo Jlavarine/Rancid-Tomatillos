@@ -7,6 +7,8 @@ body {
 
 h1 {
   color: white;
+  background-color: #C41313;
+  font-size: 50px;
 }
 
 .App-header {

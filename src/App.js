@@ -51,7 +51,7 @@ class App extends Component {
     if (this.state.clickedMovie || this.state.clickedHome) {
       return (
         <main className='App'>
-          <h1>Rancid Tomatillos</h1>
+          <h1>🍿 Rancid Tomatillos 🍿</h1>
           <MovieDescription movies={this.state.clickedMovie} returnToMainView={this.returnToMainView}/>
         </main>
       )
@@ -62,7 +62,7 @@ class App extends Component {
     } else {
       return (
         <main className='App'>
-          <h1>Rancid Tomatillos</h1>
+          <h1>🍿 Rancid Tomatillos 🍿</h1>
           <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
         </main>
       )
