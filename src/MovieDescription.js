@@ -67,7 +67,7 @@ class MovieDescription extends Component {
             <br/>
             <p>Release Date: {this.state.movie.release_date}</p>
             <br/>
-            <button onClick={() => this.props.returnToMainView()}>Return</button>
+            <button className='return-button' onClick={() => this.props.returnToMainView()}>Return</button>
             </div>
           </div>
         </div>
