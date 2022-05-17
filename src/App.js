@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-// import movieData from './data';
-// import logo from './logo.svg';
 import './App.css';
 import MovieContainer from './MovieContainer';
 import MovieDescription from './MovieDescription';
+import { Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -17,16 +16,11 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    // fetch('https://httpstat.us/500')
-    //rancid-tomatillos.herokuapp.com/api/v2/movies
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    // .then(response => response.json())
     .then(response => {
-      // if (response.status === '500') {
       if (!response.ok) {
         this.setState({error: 'Something went wrong, please refresh!'})
       } else {
-        // console.log(response)
         return response.json()
       }
     })
@@ -48,57 +42,45 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.clickedMovie || this.state.clickedHome) {
-      return (
-        <main className='App'>
-          <h1>🍿 Rancid Tomatillos 🍿</h1>
-          <MovieDescription movies={this.state.clickedMovie} returnToMainView={this.returnToMainView}/>
-        </main>
-      )
-    } else if (this.state.error) {
-      return (
-        <h1 className='App'>{this.state.error}</h1>
-      )
-    } else {
-      return (
-        <main className='App'>
-          <h1>🍿 Rancid Tomatillos 🍿</h1>
-          <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
-        </main>
-      )
-    }
+    return (
+      <main className='App'>
+        <h1>🍿 Rancid Tomatillos 🍿</h1>
+        <Route exact path="/" render={() => <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie} /> } />
+        <Route path="/:id" render={({match}) => {
+          return <MovieDescription {...match.params.id} movies={this.state.clickedMovie} returnToMainView={this.returnToMainView}/>
+        }}/>
+      </main>
+    )
   }
+
+
+  // <Route exact path='/:id' render={({match}) => {
+  //   return <MovieDescription id={match.params.id} /> }} />
+// <Route exact path="/movies/:movie_id" render={() => <MovieDescription movies={this.state.movies} returnToMainView={this.returnToMainView} /> } />
+
+
+
+
+  // render() {
+  //   if (this.state.clickedMovie || this.state.clickedHome) {
+  //     return (
+  //       <main className='App'>
+  //         <h1>🍿 Rancid Tomatillos 🍿</h1>
+  //         <MovieDescription movies={this.state.clickedMovie} returnToMainView={this.returnToMainView}/>
+  //       </main>
+  //     )
+  //   } else if (this.state.error) {
+  //     return (
+  //       <h1 className='App'>{this.state.error}</h1>
+  //     )
+  //   } else {
+  //     return (
+  //       <main className='App'>
+  //         <h1>🍿 Rancid Tomatillos 🍿</h1>
+  //         <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
+  //       </main>
+  //     )
+  //   }
+  // }
 }
-
-// <MovieContainer movies={this.state.movies} getClickedMovie={this.getClickedMovie}/>
-
-
-
-
-
-
-
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
 export default App;
