@@ -59,3 +59,4 @@ it('should not be able to fetch movie data and should display error message', ()
   cy.contains('h1', 'Something went wrong, please refresh!');
 });
 })
+// pre router
