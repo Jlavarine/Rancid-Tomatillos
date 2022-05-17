@@ -30,7 +30,6 @@ describe('Rancid Tomatillos main page', () => {
     }, {
       forceNetworkError: true
     }),
-    // cy.visit('http://localhost:3000')
     cy.contains('h1', 'Something went wrong, please refresh!');
   });
 });
