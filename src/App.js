@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import movieData from './data';
-// import logo from './logo.svg';
 import './App.css';
 import MovieContainer from './MovieContainer';
 import MovieDescription from './MovieDescription';
