@@ -11,7 +11,7 @@ describe('Movie Details Page', () => {
     .get('.movie-description').children().should('have.length', 2)
   });
 
-  it('should be able to visit the movie details page and render the correct elements', () => {
+  it('should be able to visit the movie details page and render the correct elements: title', () => {
     cy.contains('🍿 Rancid Tomatillos 🍿')
     .get('.movie-container')
     .children()
@@ -20,6 +20,18 @@ describe('Movie Details Page', () => {
     .children()
     .eq(1)
     .contains('Title: Money Plane')
+  });
+
+  it('should be able to visit the movie details page and render the correct elements: youtube video', () => {
+    cy.contains('🍿 Rancid Tomatillos 🍿')
+    .get('.movie-container')
+    .children()
+    .eq(0).click()
+    .get('.movie-description')
+    .children()
+    .eq(1)
+    .get('.youtube-movie')
+    .should('exist')
   });
 
   it('should be able to display return to homepage button and return to homepage when that button is clicked', () => {
@@ -41,22 +53,21 @@ describe('Movie Details Page', () => {
       url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919'
     },
     []
-  ).as('getMovieInfo');
-  cy.contains('🍿 Rancid Tomatillos 🍿')
-  .get('.movie-container')
-  .children()
-  .eq(0).click()
-  .get('.movie-description').children().should('have.length', 2)
-});
+    ).as('getMovieInfo');
+    cy.contains('🍿 Rancid Tomatillos 🍿')
+    .get('.movie-container')
+    .children()
+    .eq(0).click()
+    .get('.movie-description').children().should('have.length', 2)
+  });
 
-it('should not be able to fetch movie data and should display error message', () => {
-  cy.intercept({
-    method: 'GET',
-    url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919',
-  }, {
-    forceNetworkError: true
-  }),
-  cy.contains('h1', 'Something went wrong, please refresh!');
-});
+  it('should not be able to fetch movie data and should display error message', () => {
+    cy.intercept({
+      method: 'GET',
+      url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919',
+    }, {
+      forceNetworkError: true
+    }),
+    cy.contains('h1', 'Something went wrong, please refresh!');
+  });
 })
-// pre router
