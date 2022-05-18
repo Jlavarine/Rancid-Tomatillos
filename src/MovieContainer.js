@@ -1,5 +1,4 @@
 import React from 'react';
-// import App from './App';
 import './MovieContainer.css';
 import MovieCard from './MovieCard';
 
@@ -11,7 +10,6 @@ const MovieContainer = (props) => {
         key={movie.id}
         poster={movie.poster_path}
         title={movie.title}
-        getClickedMovie={props.getClickedMovie}
       />
     )
   })
@@ -22,7 +20,4 @@ const MovieContainer = (props) => {
     </div>
   )
 }
-
-
-
 export default MovieContainer;
