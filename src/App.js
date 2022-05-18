@@ -49,6 +49,7 @@ class App extends Component {
         <Route path="/:id" render={({match}) => {
           return <MovieDescription {...match.params.id} movies={this.state.clickedMovie} returnToMainView={this.returnToMainView}/>
         }}/>
+        {this.state.error && <h1>{this.state.error}</h1>}
       </main>
     )
   }

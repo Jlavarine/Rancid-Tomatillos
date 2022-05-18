@@ -30,6 +30,23 @@ class MovieDescription extends Component {
     this.fetchTrailerData()
   }
 
+  // componentDidUpdate = () => {
+  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movies.id}`)
+  //   .then(response => {
+  //     if (!response.ok) {
+  //       this.setState({error: 'Something went wrong, please refresh!'})
+  //     } else {
+  //       return response.json()
+  //     }
+  //   })
+  //   .then(data => this.setState({movie: data.movie}))
+  //   .catch(error => {
+  //     console.log('Something went wrong, please refresh!')
+  //     this.setState({error: 'Something went wrong, please refresh!'})
+  //   })
+  //   this.fetchTrailerData()
+  // }
+
   fetchTrailerData = () => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movies.id}/videos`)
     .then(response => {
@@ -54,7 +71,7 @@ class MovieDescription extends Component {
         </div>
         <div className='trailer-details-box'>
           <div className='trailer-box'>
-          <iframe src={`http://www.youtube.com/embed/${this.state.videos.key}`} width='900px' height='400px'></iframe>
+          <iframe className='youtube-movie' src={`http://www.youtube.com/embed/${this.state.videos.key}`} width='900px' height='400px'></iframe>
           </div>
           <div className='movie-details-box'>
           <p>Title: {this.state.movie.title}</p>
