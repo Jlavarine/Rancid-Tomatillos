@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MovieContainer from './MovieContainer';
 import MovieDescription from './MovieDescription';
+import Footer from './Footer';
 import { Route, Link } from 'react-router-dom';
 
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
         <Route exact path="/" render={() => <MovieContainer movies={this.state.movies}  /> } />
         <Route path="/:id" render={({match}) => <MovieDescription  id={match.params.id} />
         }/>
+        <Footer />
       </main>
     )
   }

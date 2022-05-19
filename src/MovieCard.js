@@ -11,7 +11,6 @@ const MovieCard = (props) => {
         <img id={props.id} className='posters' src={props.poster} alt={props.title}/>
       </div>
     </Link>
-
   )
 }
 
