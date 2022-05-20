@@ -55,8 +55,8 @@ class MovieDescription extends Component {
         <img className='poster-path' src={this.state.movie.poster_path} alt={this.state.movie.title}/>
         </div>
         <div className='trailer-details-box'>
-        <div className='trailer-box'>
-        <iframe className='youtube-movie' src={`http://www.youtube.com/embed/${this.state.videos.key}`} alt={this.state.movie.title} width='750px' height='400px'></iframe>
+          <div className='trailer-box'>
+            <iframe className='youtube-movie' src={`http://www.youtube.com/embed/${this.state.videos.key}`} alt={this.state.movie.title} width='750px' height='400px'></iframe>
           </div>
           <div className='movie-details-box'>
           <p className='desc-title'>Title: {this.state.movie.title}</p><br/>
