@@ -35,15 +35,14 @@ class MovieDescription extends Component {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}/videos`)
     .then(response => {
       if (!response.ok) {
-        this.setState({error: 'Something went wrong, please refresh!'})
+        console.log('Could not load video trailer, please refresh!')
       } else {
         return response.json()
       }
     })
     .then(data => this.setState({videos: data.videos[0]}))
     .catch(error => {
-      console.log('Something went wrong, please refresh!')
-      this.setState({error: 'Something went wrong, please refresh!'})
+      console.log('Could not load video trailer, please refresh!')
     })
   }
 
