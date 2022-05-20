@@ -24,7 +24,6 @@ describe('Rancid Tomatillos main page', () => {
     cy.get('.developer-1').should('exist')
     cy.get('.developer-2').should('exist')
     cy.get('.school').should('exist')
-
   });
 
   it('should be able to fetch movie data and display it on the page', () => {
@@ -64,6 +63,7 @@ describe('Rancid Tomatillos main page', () => {
     }
   )
     cy.contains('h1', 'Something went wrong, please refresh!');
+    cy.get('.movie-container').children().should('have.length', 0)
   });
 
   it('should be able to display error message if fetch return a 404 status code', () => {
