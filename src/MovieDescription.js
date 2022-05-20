@@ -57,11 +57,11 @@ class MovieDescription extends Component {
             <iframe className='youtube-movie' src={`http://www.youtube.com/embed/${this.state.videos.key}`} alt={this.state.movie.title} width='750px' height='400px'></iframe>
           </div>
           <div className='movie-details-box'>
-            <p>Title: {this.state.movie.title}</p><br/>
-            <p>Overview: {this.state.movie.overview}</p><br/>
-            <p>Runtime: {this.state.movie.runtime} mins</p><br/>
-            <p>Average Rating: {Math.round(this.state.movie.average_rating)}/10</p><br/>
-            <p>Release Date: {this.state.movie.release_date}</p><br/>
+            <p className='desc-title'>Title: {this.state.movie.title}</p><br/>
+            <p className='desc-overview'>Overview: {this.state.movie.overview}</p><br/>
+            <p className='desc-runtime'>Runtime: {this.state.movie.runtime} mins</p><br/>
+            <p className='desc-rating'>Average Rating: {this.state.movie.average_rating}</p><br/>
+            <p className='desc-release'>Release Date: {this.state.movie.release_date}</p><br/>
             <Link to='/'>
               <button className='return-button'>Return</button>
             </Link>
