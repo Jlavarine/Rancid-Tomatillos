@@ -54,13 +54,13 @@ class MovieDescription extends Component {
         </div>
         <div className='trailer-details-box'>
           <div className='trailer-box'>
-            <iframe className='youtube-movie' src={`http://www.youtube.com/embed/${this.state.videos.key}`} alt={this.state.movie.title} width='900px' height='400px'></iframe>
+            <iframe className='youtube-movie' src={`http://www.youtube.com/embed/${this.state.videos.key}`} alt={this.state.movie.title} width='750px' height='400px'></iframe>
           </div>
           <div className='movie-details-box'>
             <p>Title: {this.state.movie.title}</p><br/>
             <p>Overview: {this.state.movie.overview}</p><br/>
             <p>Runtime: {this.state.movie.runtime} mins</p><br/>
-            <p>Average Rating: {this.state.movie.average_rating}</p><br/>
+            <p>Average Rating: {Math.round(this.state.movie.average_rating)}/10</p><br/>
             <p>Release Date: {this.state.movie.release_date}</p><br/>
             <Link to='/'>
               <button className='return-button'>Return</button>
