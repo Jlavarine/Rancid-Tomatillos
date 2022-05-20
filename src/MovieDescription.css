@@ -1,6 +1,7 @@
 p {
   color: white;
 }
+
 .movie-description {
   display: flex;
   align-items: center;
@@ -15,8 +16,8 @@ p {
 .poster-box{
   display: flex;
   align-items: flex-start;
-  width: 95vw;
-  height: 200px;
+  width: 92vw;
+  height: 150px;
   border-radius: 90px;
   margin-bottom: 0px;
 }
@@ -42,9 +43,22 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  width: 500px;
   height: 400px;
   background-color: black;
   background: rgba(0,0,0, .5);
   border-radius: 90px;
+}
+
+.return-button {
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.return-button:hover {
+  transform: scale(1.1);
+  transition: 800ms;
+  cursor: pointer;
 }
