@@ -40,17 +40,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #### Homepage:
 - On the homepage, the user can view all of the movies
 - User can click any movie to be redirected to that movie's details page
+![Home](https://user-images.githubusercontent.com/96446170/169662086-920d7b07-0a73-4cc2-b199-8250a08d5566.gif)
 
 #### Movie Details:
-
 - On the movie details page, user is greeted with movie poster, image, details, and trailers
 - Movie details include title, overview, release date, runtime, and ratings
 - User can click on the return button to go back to the homepage
+![Movie Details](https://user-images.githubusercontent.com/96446170/169662312-76ac21c8-05e2-48ee-930a-45be4349de91.gif)
+
 
 ## Future Additions and Improvements
 
 - Add a login page
 - Ability to search a movie by title or filter by ratings
+
 
 ## Project Specs
 
