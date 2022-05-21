@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
+
+## Overview
+
+Rancid Tomatillos is an application that allows a user to browse through a list of movies, click on the movie cards, view movie details, such as movie images, title, overview, description, runtime, and ratings, as well as watch the official movie trailers.
+
+
+## Technologies
+
+- React
+- React Router
+- JavaScript
+- HTML
+- CSS
+- Cypress
+- Fetch API
+
+## Contributors
+
+- [Jacob Lavarine](https://github.com/Jlavarine)
+- [Igor Decess](https://github.com/userigorgithub)
+
+## Deployed Page
+
+You can access deployed application [HERE!]()
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Set Up
 
-In the project directory, you can run:
+1. Start by going [here](https://github.com/Jlavarine/Rancid-Tomatillos). From here you will want to click on the green rectangular button titled 'Code'. This should open a drop down menu where you should see a link. To the left of the link there should be an icon with two over lapping squares. You can click the icon to copy the link.
+2. You will want to clone down the repo to you terminal using `git clone git@github.com:Jlavarine/Rancid-Tomatillos.git`.
+3. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` or `npm i` to install project dependencies.
+4. Run `npm start` in the terminal to see the page. You will need to copy and paste the local server from the terminal and paste it into your browser. The local server should be simialiar to, "http://localhost:3000/". `Control + C` is the command to stop running the local server. Closing the terminal without stopping the server first could allow the server to continue to run in the background and cause problems.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Homepage:
+- On the homepage, the user can view all of the movies
+- User can click any movie to be redirected to that movie's details page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Movie Details:
 
-### `npm test`
+- On the movie details page, user is greeted with movie poster, image, details, and trailers
+- Movie details include title, overview, release date, runtime, and ratings
+- User can click on the return button to go back to the homepage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Future Additions and Improvements
 
-### `npm run build`
+- Add a login page
+- Ability to search a movie by title or filter by ratings
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Specs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Click [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) for project specs; provided by [Turing School of Software and Design](https://turing.edu/).
