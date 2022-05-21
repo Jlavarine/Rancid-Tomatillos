@@ -28,7 +28,7 @@ describe('Movie Details Page', () => {
     .get('.desc-title').contains('Title: Money Plane')
     .get('.desc-overview').contains('Overview: A professional thief with $40 million in debt and his family\'s life on the line must commit one final heist - rob a futuristic airborne casino filled with the world\'s most dangerous criminals.')
     .get('.desc-runtime').contains('Runtime: 82 mins')
-    .get('.desc-rating').contains('Average Rating: 6.875')
+    .get('.desc-rating').contains('Average Rating: 7/10')
     .get('.desc-release').contains('Release Date: 2020-09-29')
   });
 
@@ -54,7 +54,7 @@ describe('Movie Details Page', () => {
     .contains('Mulan');
   });
 
-  it('should be able to fetch  individual movie data and change URL based on movie id', () => {
+  it('should be able to fetch individual movie data and change URL based on movie id', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
       statusCode: 200,
       body: {
@@ -77,12 +77,11 @@ describe('Movie Details Page', () => {
           }
         ]
       }
-    }
-  )
-  cy.get('.movie-container')
-  .children()
-  .eq(0).click()
-  cy.url('http://localhost:3000/694919')
+    })
+    cy.get('.movie-container')
+    .children()
+    .eq(0).click()
+    cy.url('http://localhost:3000/694919')
   });
 
   it('should be able to display error message if fetch return a 500 status code', () => {
@@ -91,12 +90,12 @@ describe('Movie Details Page', () => {
       body: {
         error: "Server down try again."
       }
-    }
-  )
-  cy.get('.movie-container')
-  .children()
-  .eq(0).click()
-  cy.contains('h1', 'Something went wrong, please refresh!');
+    })
+    cy.get('.movie-container')
+    .children()
+    .eq(0).click()
+    cy.get('.fof-message')
+    .contains('That url does not exist :/');
   });
 
   it('should be able to display error message if fetch return a 404 status code', () => {
@@ -105,35 +104,34 @@ describe('Movie Details Page', () => {
       body: {
         error: "URL cannot be found."
       }
-    }
-  )
-  cy.get('.movie-container')
-  .children()
-  .eq(0).click()
-  cy.contains('h1', 'Something went wrong, please refresh!');
+    })
+    cy.get('.movie-container')
+    .children()
+    .eq(0).click()
+    cy.get('.fof-message')
+    .contains('That url does not exist :/');
   });
 
-  // it('should be able to fetch individual movie data and display it on the page', () => {
-  //   cy.intercept({
-  //     method: 'GET',
-  //     url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919'
-  //   },
-  //   []
-  //   ).as('getMovieInfo');
-  //   cy.contains('🍿 Rancid Tomatillos 🍿')
-  //   .get('.movie-container')
-  //   .children()
-  //   .eq(0).click()
-  //   .get('.movie-description').children().should('have.length', 2)
-  // });
-  //
-  // it('should not be able to fetch movie data and should display error message', () => {
-  //   cy.intercept({
-  //     method: 'GET',
-  //     url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919',
-  //   }, {
-  //     forceNetworkError: true
-  //   }),
-  //   cy.contains('h1', 'Something went wrong, please refresh!');
-  // });
-})
+  it('should be able to fetch individual movie data and check if video exists', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {
+      statusCode: 200,
+      body: {
+        videos: [
+          {
+          "id": 330,
+          "movie_id": 694919,
+          "key": "aETz_dRDEys",
+          "site": "YouTube",
+          "type": "Trailer"
+          }
+        ]
+      }
+    })
+    cy.get('.movie-container')
+    .children()
+    .eq(0).click()
+    cy.url('http://localhost:3000/694919')
+    cy.get('.youtube-movie')
+    .should('exist')
+  });
+});
