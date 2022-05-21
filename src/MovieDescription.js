@@ -3,6 +3,7 @@ import App from './App'
 import NoPageFound from './NoPageFound'
 import './MovieDescription.css'
 import { Link } from 'react-router-dom'
+import { fetchData, fetchMovieTrailer } from './apiCalls'
 
 class MovieDescription extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class MovieDescription extends Component {
   }
 
   componentDidMount = () => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
+    fetchData(`/${this.props.id}`)
     .then(response => {
       if (!response.ok) {
         this.setState({error: 'Something went wrong, please refresh!'})
@@ -32,7 +33,7 @@ class MovieDescription extends Component {
   }
 
   fetchTrailerData = () => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}/videos`)
+    fetchData(`/${this.props.id}/videos`)
     .then(response => {
       if (!response.ok) {
         console.log('Could not load video trailer, please refresh!')
