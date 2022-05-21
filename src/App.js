@@ -4,6 +4,7 @@ import MovieContainer from './MovieContainer';
 import MovieDescription from './MovieDescription';
 import Footer from './Footer';
 import { Route, Link } from 'react-router-dom';
+import { fetchData } from './APIcalls'
 
 class App extends Component {
   constructor() {
@@ -15,19 +16,19 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(response => {
-      if (!response.ok) {
-        this.setState({error: 'Something went wrong, please refresh!'})
-      } else {
-        return response.json()
-      }
-    })
-    .then(data => this.setState({movies: data.movies}))
-    .catch(error => {
-      console.log('Something went wrong, please refresh!')
+  fetchData()
+  .then(response => {
+    if (!response.ok) {
       this.setState({error: 'Something went wrong, please refresh!'})
-    })
+    } else {
+      return response.json()
+    }
+  })
+  .then(data => this.setState({movies: data.movies}))
+  .catch(error => {
+    console.log('Something went wrong, please refresh!')
+    this.setState({error: 'Something went wrong, please refresh!'})
+  })
   }
 
   render() {
