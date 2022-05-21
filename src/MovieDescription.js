@@ -3,7 +3,7 @@ import App from './App'
 import NoPageFound from './NoPageFound'
 import './MovieDescription.css'
 import { Link } from 'react-router-dom'
-import { fetchData, fetchMovieTrailer } from './apiCalls'
+import { fetchData, fetchMovieTrailer } from './APIcalls'
 
 class MovieDescription extends Component {
   constructor(props) {

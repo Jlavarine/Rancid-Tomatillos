@@ -4,7 +4,7 @@ import MovieContainer from './MovieContainer';
 import MovieDescription from './MovieDescription';
 import Footer from './Footer';
 import { Route, Link } from 'react-router-dom';
-import { fetchData } from './apiCalls'
+import { fetchData } from './APIcalls'
 
 class App extends Component {
   constructor() {
