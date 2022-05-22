@@ -36,7 +36,7 @@ class App extends Component {
       <main className='App'>
         {this.state.error ? <h1>{this.state.error}</h1> : <h1>🍿 Rancid Tomatillos 🍿</h1>}
         <Route exact path="/" render={() => <MovieContainer movies={this.state.movies}  /> } />
-        <Route path="/:id" render={({match}) => <MovieDescription  id={match.params.id} /> }/>
+        <Route exact path="/:id" render={({match}) => <MovieDescription  id={match.params.id} /> }/>
         <Footer />
       </main>
     )

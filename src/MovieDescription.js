@@ -16,6 +16,7 @@ class MovieDescription extends Component {
   }
 
   componentDidMount = () => {
+    window.scrollTo(0, 0);
     fetchData(`/${this.props.id}`)
     .then(response => {
       if (!response.ok) {
@@ -78,4 +79,5 @@ class MovieDescription extends Component {
     }
   }
 }
+
 export default MovieDescription
