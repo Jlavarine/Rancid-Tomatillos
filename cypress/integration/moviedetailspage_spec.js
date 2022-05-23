@@ -96,7 +96,7 @@ describe('Movie Details Page', () => {
     .children()
     .eq(0).click()
     cy.get('.fof-message')
-    .contains('That url does not exist :/');
+    .contains('That url does not exist! :/');
   });
 
   it('should be able to display error message if fetch return a 404 status code', () => {
@@ -110,7 +110,7 @@ describe('Movie Details Page', () => {
     .children()
     .eq(0).click()
     cy.get('.fof-message')
-    .contains('That url does not exist :/');
+    .contains('That url does not exist! :/');
   });
 
   it('should be able to fetch individual movie data and check if video exists', () => {
