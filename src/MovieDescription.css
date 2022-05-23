@@ -62,3 +62,103 @@ p {
   transition: 800ms;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1144px) {
+  .youtube-movie {
+    width: 375px;
+    height: 325px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .movie-details-box {
+    width: 375px;
+    height: 325px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .trailer-details-box {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .poster-box {
+    display: none
+  }
+  .movie-details-box {
+    border-radius: 0px;
+    width: 525px;
+    height: 235px;
+  }
+  p {
+    font-size: 10px;
+  }
+  .youtube-movie {
+    width: 525px;
+    height: 325px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .trailer-details-box {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .poster-box {
+    display: none
+  }
+  .movie-details-box {
+    border-radius: 0px;
+    width: 475px;
+    height: 250px;
+  }
+  p {
+    font-size: 10px;
+  }
+  .youtube-movie {
+    width: 475px;
+    height: 275px;
+    margin-top: 30px;
+  }
+  .return-button {
+    height: 20px;
+    width: 50px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .trailer-details-box {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .poster-box {
+    display: none
+  }
+  .movie-details-box {
+    border-radius: 0px;
+    width: 380px;
+    height: 260px;
+  }
+  p {
+    font-size: 10px;
+  }
+  .youtube-movie {
+    width: 380px;
+    height: 275px;
+    margin-top: 30px;
+  }
+  .return-button {
+    height: 20px;
+    width: 50px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+}
