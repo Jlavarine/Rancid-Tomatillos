@@ -20,4 +20,5 @@ const MovieContainer = (props) => {
     </div>
   )
 }
+
 export default MovieContainer;

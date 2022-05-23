@@ -4,7 +4,6 @@
 
 Rancid Tomatillos is an application that allows a user to browse through a list of movies, click on the movie cards, view movie details, such as movie images, title, overview, description, runtime, and ratings, as well as watch the official movie trailers.
 
-
 ## Technologies
 
 - React
@@ -48,12 +47,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - User can click on the return button to go back to the homepage
 ![Movie Details](https://user-images.githubusercontent.com/96446170/169662312-76ac21c8-05e2-48ee-930a-45be4349de91.gif)
 
-
 ## Future Additions and Improvements
 
 - Add a login page
 - Ability to search a movie by title or filter by ratings
-
 
 ## Project Specs
 
