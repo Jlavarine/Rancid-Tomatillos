@@ -42,7 +42,13 @@ class MovieDescription extends Component {
         return response.json()
       }
     })
-    .then(data => this.setState({videos: data.videos[0]}))
+    .then(data =>  {
+      if(data.videos[0].key) {
+        this.setState({videos: data.videos[0]})
+      } else if (!data.videos[0].key) {
+        this.setState({videos: 'about:none'})
+      }
+    })
     .catch(error => {
       console.log('Could not load video trailer, please refresh!')
     })
@@ -57,7 +63,7 @@ class MovieDescription extends Component {
           </div>
           <div className='trailer-details-box'>
             <div className='trailer-box'>
-              <iframe className='youtube-movie' key={this.state.videos.key} src={`https://www.youtube.com/embed/${this.state.videos.key}`} alt={this.state.movie.title} width='750px' height='400px'></iframe>
+              {this.state.videos.key ? <iframe className='youtube-movie' key={this.state.videos.key} src={`https://www.youtube.com/embed/${this.state.videos.key}`} alt={this.state.movie.title} width='750px' height='400px'></iframe> : <p></p>}
             </div>
             <div className='movie-details-box'>
               <p className='desc-title'>Title: {this.state.movie.title}</p><br/>
