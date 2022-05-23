@@ -1,6 +1,7 @@
 describe('Movie Details Page', () => {
+
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3000');
   })
 
   it('should be able to visit the movie details page and render the title', () => {

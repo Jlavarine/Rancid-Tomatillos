@@ -49,8 +49,7 @@ describe('Rancid Tomatillos main page', () => {
           }
         ]
       }
-    }
-  )
+    })
     cy.get('.movie-container').children().should('have.length', 2)
   });
 
@@ -60,8 +59,7 @@ describe('Rancid Tomatillos main page', () => {
       body: {
         error: "Server down try again."
       }
-    }
-  )
+    })
     cy.contains('h1', 'Something went wrong, please refresh!');
     cy.get('.movie-container').children().should('have.length', 0)
   });
@@ -72,8 +70,7 @@ describe('Rancid Tomatillos main page', () => {
       body: {
         error: "URL cannot be found."
       }
-    }
-  )
+    })
     cy.contains('h1', 'Something went wrong, please refresh!');
   });
 });
