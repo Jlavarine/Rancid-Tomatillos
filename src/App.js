@@ -16,19 +16,19 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-  fetchData('/')
-  .then(response => {
-    if (!response.ok) {
+    fetchData('/')
+    .then(response => {
+      if (!response.ok) {
+        this.setState({error: 'Something went wrong, please refresh!'})
+      } else {
+        return response.json()
+      }
+    })
+    .then(data => this.setState({movies: data.movies}))
+    .catch(error => {
+      console.log('Something went wrong, please refresh!')
       this.setState({error: 'Something went wrong, please refresh!'})
-    } else {
-      return response.json()
-    }
-  })
-  .then(data => this.setState({movies: data.movies}))
-  .catch(error => {
-    console.log('Something went wrong, please refresh!')
-    this.setState({error: 'Something went wrong, please refresh!'})
-  })
+    })
   }
 
   render() {
